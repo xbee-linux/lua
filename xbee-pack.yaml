@@ -18,5 +18,5 @@ build:
   - shell:
       cmds:
         - make linux
-        - make install INSTALL_TOP={% xbeeOut %}
+        - make install INSTALL_TOP={% xbeeOut %}/usr
       directory: "{% xbeeSrc %}/lua-{% version %}"
