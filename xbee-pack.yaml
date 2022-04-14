@@ -1,0 +1,22 @@
+schema-version: 1.0
+
+type: builder
+
+
+in:
+  version: 5.3.6
+
+dependency: readline
+
+
+provision:
+  - url:
+     from: https://www.lua.org/ftp/lua-{% version %}.tar.gz
+     todir: "{% xbeeSrc %}"
+
+build:
+  - shell:
+      cmds:
+        - make linux
+        - make install INSTALL_TOP={% xbeeOut %}
+      directory: "{% xbeeSrc %}/lua-{% version %}"
