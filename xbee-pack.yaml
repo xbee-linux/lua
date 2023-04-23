@@ -3,20 +3,20 @@ schema-version: 1.0
 type: builder
 
 
-in:
-  version: 5.3.6
+var:
+  version: 5.4.4
 
 dependency: readline
 
 
 provision:
   - url:
-     from: https://www.lua.org/ftp/lua-{% version %}.tar.gz
-     todir: "{% xbeeSrc %}"
+     from: https://www.lua.org/ftp/lua-{{ .version }}.tar.gz
+     todir: "{{ .xbeeSrc }}"
 
 build:
   - shell:
       cmds:
-        - make linux
-        - make install INSTALL_TOP={% xbeeOut %}/usr
-      directory: "{% xbeeSrc %}/lua-{% version %}"
+        - make
+        - make install INSTALL_TOP={{ .xbeeOut }}/usr
+      directory: "{{ .xbeeSrc }}/lua-{{ .version }}"
