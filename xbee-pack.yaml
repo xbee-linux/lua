@@ -12,11 +12,11 @@ dependency: readline
 provision:
   - url:
      from: https://www.lua.org/ftp/lua-{{ .version }}.tar.gz
-     todir: "{{ .xbeeSrc }}"
+     todir: "{{ .xbee.src }}"
 
 build:
   - shell:
       cmds:
         - make
-        - make install INSTALL_TOP={{ .xbeeOut }}/usr
-      directory: "{{ .xbeeSrc }}/lua-{{ .version }}"
+        - make install INSTALL_TOP={{ .xbee.out }}/usr
+      directory: "{{ .xbee.src }}/lua-{{ .version }}"
