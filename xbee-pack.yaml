@@ -10,9 +10,7 @@ dependency: readline
 
 
 provision:
-  - url:
-     from: https://www.lua.org/ftp/lua-{{ .version }}.tar.gz
-     todir: "{{ .xbee.src }}"
+  url: https://www.lua.org/ftp/lua-{{ .version }}.tar.gz
 
 build:
   - shell:
