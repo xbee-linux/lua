@@ -4,17 +4,18 @@ type: builder
 
 
 var:
-  version: 5.4.4
+  xbee:
+    version: 5.4.4
 
 dependency: readline
 
 
 provision:
-  url: https://www.lua.org/ftp/lua-{{ .version }}.tar.gz
+  url: https://www.lua.org/ftp/lua-{{ .xbee.version }}.tar.gz
 
 build:
   - shell:
       cmds:
         - make
         - make install INSTALL_TOP={{ .xbee.out }}/usr
-      directory: "{{ .xbee.src }}/lua-{{ .version }}"
+      directory: "{{ .xbee.src }}/lua-{{ .xbee.version }}"
