@@ -1,8 +1,5 @@
 schema-version: 1.0
 
-type: builder
-
-
 var:
   xbee:
     version: 5.4.4
